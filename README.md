@@ -111,12 +111,12 @@ class _MyAppState extends State<MyApp> {
 
 
 ## Screenshot
-Demo fullDateTime:
 
+Demo timeonly
 <div align="left">
   <img src="https://raw.githubusercontent.com/adampermana/textformfield_datetime_range_picker/master/screenshoot/timeonly.gif" width="200" />
 </div>
-Demo timeonly:
+Demo fullDateTime:
 
 <div align="left">
   <img src="https://raw.githubusercontent.com/adampermana/textformfield_datetime_range_picker/master/screenshoot/fulldatetime.gif" width="200" />
