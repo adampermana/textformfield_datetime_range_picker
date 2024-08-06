@@ -27,6 +27,17 @@ Add `textformfield_datetime_range_picker.dart: ^0.0.1` to your `pubspec.yaml` de
 import 'package:textformfield_datetime_range_picker/textformfield_datetime_range_picker.dart';
 ```
 
+Add the following line to your `pubspec.yaml` file:
+
+```yaml
+flutter pub add auto_size_text_field
+```
+
+```yaml
+dependencies:
+  textformfield_datetime_range_picker: ^1.0.0
+```
+
 ## Example
 ```dart
 import 'package:flutter/material.dart';
@@ -128,15 +139,9 @@ For help getting started with Flutter development, view the
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
+  ## 💰 You can help me by Donating
+  [![BuyMeACoffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/adampermana)
 
-## Installation
-
-Add the following line to your `pubspec.yaml` file:
-
-```yaml
-dependencies:
-  textformfield_datetime_range_picker: ^1.0.0
-```
 
 ## License
 
