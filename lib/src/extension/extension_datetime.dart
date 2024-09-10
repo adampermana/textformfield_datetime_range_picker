@@ -1,37 +1,37 @@
-// ============================================================
-// Module Name       : extension_datetime.dart
-// Date of Creation  : 2024-08-03
-// Name of Creator   : Adam Permana
-// History of Modifications:
-//
-// Summary           :
-// This file contains extensions for the [DateTime] and [DateTimeRange] classes.
-// It provides additional methods and utilities for date and time manipulation
-// such as calculating the number of days in a month, adding days or months,
-// and comparing different aspects of dates and times.
-//
-// Functions         :
-// - `daysInMonth`: Returns the number of days in the month of the [DateTime] object.
-// - `dateOnly`: Returns a [DateTime] object with time set to midnight.
-// - `addDays`: Adds a specified number of days to the [DateTime] object and sets time to midnight.
-// - `addMonths`: Adds a specified number of months to the [DateTime] object and sets day to 1 and time to midnight.
-// - `isSameHour`: Checks if two [DateTime] objects have the same hour, day, month, and year.
-// - `isSameDay`: Checks if two [DateTime] objects have the same day, month, and year.
-// - `isSameMonth`: Checks if two [DateTime] objects have the same month and year.
-// - `monthDelta`: Calculates the number of months between two [DateTime] objects.
-// - `firstDayOffset`: Computes the offset of the first day of the month from the first day of the week.
-// - `isBeforeDay`: Checks if the current [DateTime] object is before another [DateTime] object by day.
-// - `isAfterDay`: Checks if the current [DateTime] object is after another [DateTime] object by day.
-// - `isBeforeHour`: Checks if the current [DateTime] object is before another [DateTime] object by hour.
-// - `isAfterHour`: Checks if the current [DateTime] object is after another [DateTime] object by hour.
-// - `simplify`: Returns a simplified representation of the [DateTime] object in minutes.
-// - `copyWith`: Returns a new [DateTime] object with specified changes to year, month, day, hour, minute, second, millisecond, or microsecond.
-// - `resetTime`: Returns a new [DateTime] object with time set to either the start or end of the day.
-// - `datesOnly`: Returns a [DateTimeRange] with the dates of the original but with times set to midnight.
-//
-// Variables         : None
-//
-// ============================================================
+/*============================================================
+ Module Name       : extension_datetime.dart
+ Date of Creation  : 2024-08-03
+ Name of Creator   : Adam Permana
+ History of Modifications:
+
+ Summary           :
+ This file contains extensions for the [DateTime] and [DateTimeRange] classes.
+ It provides additional methods and utilities for date and time manipulation
+ such as calculating the number of days in a month, adding days or months,
+ and comparing different aspects of dates and times.
+
+ Functions         :
+ - `daysInMonth`: Returns the number of days in the month of the [DateTime] object.
+ - `dateOnly`: Returns a [DateTime] object with time set to midnight.
+ - `addDays`: Adds a specified number of days to the [DateTime] object and sets time to midnight.
+ - `addMonths`: Adds a specified number of months to the [DateTime] object and sets day to 1 and time to midnight.
+ - `isSameHour`: Checks if two [DateTime] objects have the same hour, day, month, and year.
+ - `isSameDay`: Checks if two [DateTime] objects have the same day, month, and year.
+ - `isSameMonth`: Checks if two [DateTime] objects have the same month and year.
+ - `monthDelta`: Calculates the number of months between two [DateTime] objects.
+ - `firstDayOffset`: Computes the offset of the first day of the month from the first day of the week.
+ - `isBeforeDay`: Checks if the current [DateTime] object is before another [DateTime] object by day.
+ - `isAfterDay`: Checks if the current [DateTime] object is after another [DateTime] object by day.
+ - `isBeforeHour`: Checks if the current [DateTime] object is before another [DateTime] object by hour.
+ - `isAfterHour`: Checks if the current [DateTime] object is after another [DateTime] object by hour.
+ - `simplify`: Returns a simplified representation of the [DateTime] object in minutes.
+ - `copyWith`: Returns a new [DateTime] object with specified changes to year, month, day, hour, minute, second, millisecond, or microsecond.
+ - `resetTime`: Returns a new [DateTime] object with time set to either the start or end of the day.
+ - `datesOnly`: Returns a [DateTimeRange] with the dates of the original but with times set to midnight.
+
+ Variables         : None
+
+ ============================================================*/
 
 import 'package:flutter/material.dart';
 

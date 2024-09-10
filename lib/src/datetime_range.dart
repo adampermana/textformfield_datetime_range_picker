@@ -1,31 +1,31 @@
-// ============================================================
-// Module Name       : datetime_range.dart
-// Date of Creation  : 2024-08-03
-// Name of Creator   : Adam Permana
-// History of Modifications:
-//                    2024-08-03 - Initial creation by Adam Permana
-//                    2024-08-03 - Added functionality for DateTimeFields
-//                    2024-08-03 - Added clear functionality
-//                    2024-08-03 - Improved focus handling
-//
-// Summary           : This module handles DateTimeFields.
-// Functions         :
-//                     - DateTimeFields: A FormField for selecting DateTime
-//                     - tryFormat: Formats a DateTime to String
-//                     - tryParse: Parses a String to DateTime
-//                     - combine: Combines a DateTime and TimeOfDay
-//                     - convert: Converts a TimeOfDay to DateTime
-//
-// Variables         :
-//                     - format: DateFormat for representing date as string
-//                     - onShowPicker: Function to show date chooser dialog
-//                     - resetIcon: Icon to reset the text field
-//                     - controller: TextEditingController for the field
-//                     - focusNode: FocusNode for the field
-//                     - readOnly: Boolean to set read-only state
-//                     - onChanged: Callback when the field value changes
-//
-// ============================================================
+/*============================================================
+ Module Name       : datetime_range.dart
+ Date of Creation  : 2024-08-03
+ Name of Creator   : Adam Permana
+ History of Modifications:
+                    2024-08-03 - Initial creation by Adam Permana
+                    2024-08-03 - Added functionality for DateTimeFields
+                    2024-08-03 - Added clear functionality
+                    2024-08-03 - Improved focus handling
+
+ Summary           : This module handles DateTimeFields.
+ Functions         :
+                     - DateTimeFields: A FormField for selecting DateTime
+                     - tryFormat: Formats a DateTime to String
+                     - tryParse: Parses a String to DateTime
+                     - combine: Combines a DateTime and TimeOfDay
+                     - convert: Converts a TimeOfDay to DateTime
+
+ Variables         :
+                     - format: DateFormat for representing date as string
+                     - onShowPicker: Function to show date chooser dialog
+                     - resetIcon: Icon to reset the text field
+                     - controller: TextEditingController for the field
+                     - focusNode: FocusNode for the field
+                     - readOnly: Boolean to set read-only state
+                     - onChanged: Callback when the field value changes
+
+ ============================================================*/
 
 import 'dart:async';
 import 'package:flutter/material.dart';

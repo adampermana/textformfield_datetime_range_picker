@@ -4,6 +4,16 @@ A customizable date and time range picker widget for Flutter applications.
 
 The `TextFormFieldDateTimeRangePicker` allows users to select a range of dates and times. It supports three modes: full date-time, time-only, and date-only selection. This widget is useful for scenarios where you need users to specify a range of dates and/or times, such as booking systems, scheduling apps, or event management.
 
+## 💰 You can help me by Donating
+  [![BuyMeACoffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/adampermana)
+
+## Demo
+
+|                                Demo timeonly                                 |                                Demo fullDateTime                                 |                                Demo dateonly                                 |
+| :-------------------------------------------------------------------: | :-----------------------------------------------------------------------: | :-----------------------------------------------------------------------: |
+| ![Demo timeonly](https://raw.githubusercontent.com/adampermana/textformfield_datetime_range_picker/master/screenshoot/timeonly.gif) | ![Demo fullDateTime](https://raw.githubusercontent.com/adampermana/textformfield_datetime_range_picker/master/screenshoot/fulldatetime.gif) | ![Demo dateonly](https://raw.githubusercontent.com/adampermana/textformfield_datetime_range_picker/master/screenshoot/dateonly.gif) |
+
+
 ## Features
 
 - Three selection modes: full date-time, time only, and date only
@@ -108,40 +118,6 @@ class _MyAppState extends State<MyApp> {
    ),
 
 ```
-
-
-## Screenshot
-
-Demo timeonly
-<div align="left">
-  <img src="https://raw.githubusercontent.com/adampermana/textformfield_datetime_range_picker/master/screenshoot/timeonly.gif" width="200" />
-</div>
-Demo fullDateTime:
-
-<div align="left">
-  <img src="https://raw.githubusercontent.com/adampermana/textformfield_datetime_range_picker/master/screenshoot/fulldatetime.gif" width="200" />
-</div>
-Demo dateonly:
-
-<div align="left">
-  <img src="https://raw.githubusercontent.com/adampermana/textformfield_datetime_range_picker/master/screenshoot/dateonly.gif" width="200" />
-</div>
-
-
-## Getting Started
-
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
-
-For help getting started with Flutter development, view the
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
-  ## 💰 You can help me by Donating
-  [![BuyMeACoffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/adampermana)
-
 
 ## License
 

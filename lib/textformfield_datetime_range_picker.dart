@@ -1,45 +1,45 @@
 // ignore_for_file: unused_element, depend_on_referenced_packages
 
-// ============================================================
-// Module Name       : textformfield_datetime_range_picker.dart
-// Date of Creation  : 2024-08-03
-// Name of Creator   : Adam Permana
-// History of Modifications:
-// 2024-08-03 - Initial creation of the TextFormFieldDateTimeRangePicker widget.
-// 2024-08-03 - Added support for different date-time selection modes: fullDateTime, timeOnly, dateOnly.
-//
-// Summary           :
-// This file contains a customizable Flutter widget for picking a range of dates and/or times.
-// The `TextFormFieldDateTimeRangePicker` widget allows users to select a range of dates and times
-// with different modes of selection: full date-time, time-only, and date-only. It supports various
-// configurations such as initial date, minimum and maximum hours, custom icons, and titles.
-//
-// Functions         :
-// - _buildFullDateTimeOption: Builds the UI for full date-time selection mode.
-// - _buildTimeOnlyOption: Builds the UI for time-only selection mode.
-// - _buildDateOnlyOption: Builds the UI for date-only selection mode.
-// - _buildDateField: Creates a date picker field.
-// - _buildTimeDropdown: Creates a time picker dropdown field.
-// - changeCurrMonth: Updates the current month for the calendar view.
-// - dateTimeChanged: Handles changes to the selected date and time range.
-//
-// Variables         :
-// - today: The current date and time.
-// - date2: The date one day after today.
-// - maxhour: The maximum hour value for the time picker.
-// - hours: A list of available hours for selection.
-// - currMonth: The currently displayed month for the calendar view.
-// - daysInMonth: The number of days in the current month.
-// - firstDayOffset: The offset for the first day of the month.
-// - disableDayUntil: The day until which dates are disabled in the calendar.
-// - startTime: The selected start time.
-// - endTime: The selected end time.
-// - _startDateController: Controller for the start date text field.
-// - _endDateController: Controller for the end date text field.
-// - startDate: The selected start date.
-// - endDate: The selected end date.
-//
-// ============================================================
+/*============================================================
+ Module Name       : textformfield_datetime_range_picker.dart
+ Date of Creation  : 2024-08-03
+ Name of Creator   : Adam Permana
+ History of Modifications:
+ 2024-08-03 - Initial creation of the TextFormFieldDateTimeRangePicker widget.
+ 2024-08-03 - Added support for different date-time selection modes: fullDateTime, timeOnly, dateOnly.
+
+ Summary           :
+ This file contains a customizable Flutter widget for picking a range of dates and/or times.
+ The `TextFormFieldDateTimeRangePicker` widget allows users to select a range of dates and times
+ with different modes of selection: full date-time, time-only, and date-only. It supports various
+ configurations such as initial date, minimum and maximum hours, custom icons, and titles.
+
+ Functions         :
+ - _buildFullDateTimeOption: Builds the UI for full date-time selection mode.
+ - _buildTimeOnlyOption: Builds the UI for time-only selection mode.
+ - _buildDateOnlyOption: Builds the UI for date-only selection mode.
+ - _buildDateField: Creates a date picker field.
+ - _buildTimeDropdown: Creates a time picker dropdown field.
+ - changeCurrMonth: Updates the current month for the calendar view.
+ - dateTimeChanged: Handles changes to the selected date and time range.
+
+ Variables         :
+ - today: The current date and time.
+ - date2: The date one day after today.
+ - maxhour: The maximum hour value for the time picker.
+ - hours: A list of available hours for selection.
+ - currMonth: The currently displayed month for the calendar view.
+ - daysInMonth: The number of days in the current month.
+ - firstDayOffset: The offset for the first day of the month.
+ - disableDayUntil: The day until which dates are disabled in the calendar.
+ - startTime: The selected start time.
+ - endTime: The selected end time.
+ - _startDateController: Controller for the start date text field.
+ - _endDateController: Controller for the end date text field.
+ - startDate: The selected start date.
+ - endDate: The selected end date.
+
+ ============================================================*/
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
