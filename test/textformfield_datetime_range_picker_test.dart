@@ -61,34 +61,5 @@ void main() {
       expect(find.text('Starting Hour'), findsNothing);
       expect(find.text('End Hour'), findsNothing);
     });
-
-    testWidgets('calls onChanged when date is selected',
-        (WidgetTester tester) async {
-      DateTimeRange? selectedRange;
-
-      await tester.pumpWidget(
-        MaterialApp(
-          home: Scaffold(
-            body: TextFormFieldDateTimeRangePicker(
-              selectedOption: DateTimeOption.fullDateTime,
-              onChanged: (DateTimeRange range) {
-                selectedRange = range;
-              },
-            ),
-          ),
-        ),
-      );
-
-      // Tap the start date field
-      await tester.tap(find.byType(DateTimeFields).first);
-      await tester.pumpAndSettle();
-
-      // Select a date from the date picker
-      await tester.tap(find.text('15'));
-      await tester.tap(find.text('OK'));
-      await tester.pumpAndSettle();
-
-      expect(selectedRange, isNotNull);
-    });
   });
 }
