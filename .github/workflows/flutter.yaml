@@ -1,8 +1,3 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
 name: Flutter CI
 
 on:
@@ -20,9 +15,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # Set up Dart SDK (tanpa Flutter)
+      # Set up Dart SDK
       - name: Set up Dart SDK
-        uses: dart-lang/setup-dart@9a04e6d73cca37bd455e0608d7e5092f881fd603
+        uses: dart-lang/setup-dart@v1
         with:
           sdk: stable
 
@@ -36,17 +31,14 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-      # Uncomment this step to verify the use of 'dart format' on each commit.
+      # Memverifikasi formatting dengan 'dart format'
       - name: Verify formatting
-        run: flutter format --set-exit-if-changed . 
-        # run: dart format --output=none --set-exit-if-changed .
+        run: dart format --output=none --set-exit-if-changed .
 
-      # Consider passing '--fatal-infos' for slightly stricter analysis.
+      # Analisis kode proyek Flutter
       - name: Analyze project source
         run: flutter analyze
 
-      # Your project will need to have tests in test/ and a dependency on
-      # package:test for this step to succeed. Note that Flutter projects will
-      # want to change this to 'flutter test'.
+      # Menjalankan pengujian
       - name: Run tests
         run: flutter test
