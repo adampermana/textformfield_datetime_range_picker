@@ -13,7 +13,7 @@ on:
 jobs:
   publish:
     permissions:
-      id-token: write # Required for authentication using OIDC
+      id-token: write
     runs-on: ubuntu-latest
 
     steps:
@@ -24,8 +24,6 @@ jobs:
         with:
           flutter-version: "3.16.9"
           channel: "stable"
-          environment: pub.dev
-
       # Install dependencies
       - name: Install dependencies
         run: flutter pub get
@@ -40,4 +38,3 @@ jobs:
           PUB_DEV_TOKEN: ${{ secrets.PUB_DEV_TOKEN }}
         run: |
           echo $PUB_DEV_TOKEN | flutter pub publish -f
-          bash scripts/credentials.sh
