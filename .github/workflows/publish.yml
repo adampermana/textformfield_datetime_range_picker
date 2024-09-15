@@ -4,11 +4,8 @@ on:
   push:
     tags:
       - "v[0-9]+.[0-9]+.[0-9]+*"
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
+  release:
+    types: [published]
 
 jobs:
   publish:
@@ -30,10 +27,10 @@ jobs:
 
       # Validate pubspec.yaml
       - name: Validate pubspec.yaml
-        run: flutter pub publish --dry-run
+        run: dart pub publish --dry-run
 
       - name: Publish to pub.dev 🚀
-        uses: k-paxian/dart-package-publisher@v1.5
+        uses: k-paxian/dart-package-publisher@v1.6
         with:
           credentialJson: ${{ secrets.PUB_CREDENTIALS_JSON }}
           flutter: true

@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 /*============================================================
  Module Name       : datetime_range.dart
  Date of Creation  : 2024-08-03
