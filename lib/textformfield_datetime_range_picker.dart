@@ -588,7 +588,7 @@ class _TextFormFieldDateTimeRangePickerState
       children: [
         title,
         const SizedBox(height: 5),
-        _TimeDropdownNew(
+        TimeDropdownNew(
           time: time,
           confirmText: widget.buttonSubmitTime ?? 'Submit',
           cancelText: widget.buttonCancelTime ?? 'Cancel',
@@ -609,7 +609,7 @@ class _TextFormFieldDateTimeRangePickerState
   }
 }
 
-class _TimeDropdownNew extends StatelessWidget {
+class TimeDropdownNew extends StatelessWidget {
   final TimeOfDay time;
   final ValueChanged<TimeOfDay>? onTimeChanged;
   final BoxDecoration? boxDecoration;
@@ -618,7 +618,8 @@ class _TimeDropdownNew extends StatelessWidget {
   final String? cancelText;
   final String? confirmText;
 
-  const _TimeDropdownNew({
+  const TimeDropdownNew({
+    super.key,
     required this.time,
     this.onTimeChanged,
     required this.boxDecoration,

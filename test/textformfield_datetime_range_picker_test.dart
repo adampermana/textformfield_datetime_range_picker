@@ -1,29 +1,94 @@
-// import 'package:flutter_test/flutter_test.dart';
-// import 'package:textformfield_datetime_range_picker/textformfield_datetime_range_picker.dart';
-// import 'package:textformfield_datetime_range_picker/textformfield_datetime_range_picker_platform_interface.dart';
-// import 'package:textformfield_datetime_range_picker/textformfield_datetime_range_picker_method_channel.dart';
-// import 'package:plugin_platform_interface/plugin_platform_interface.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:textformfield_datetime_range_picker/src/datetime_range.dart';
+import 'package:textformfield_datetime_range_picker/textformfield_datetime_range_picker.dart';
 
-// class MockTextformfieldDatetimeRangePickerPlatform
-//     with MockPlatformInterfaceMixin
-//     implements TextformfieldDatetimeRangePickerPlatform {
+void main() {
+  group('TextFormFieldDateTimeRangePicker', () {
+    testWidgets('renders correctly in fullDateTime mode',
+        (WidgetTester tester) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Scaffold(
+            body: TextFormFieldDateTimeRangePicker(
+              selectedOption: DateTimeOption.fullDateTime,
+              onChanged: (DateTimeRange range) {},
+            ),
+          ),
+        ),
+      );
 
-//   @override
-//   Future<String?> getPlatformVersion() => Future.value('42');
-// }
+      expect(find.text('Start Date'), findsOneWidget);
+      expect(find.text('End Date'), findsOneWidget);
+      expect(find.text('Starting Hour'), findsOneWidget);
+      expect(find.text('End Hour'), findsOneWidget);
+    });
 
-// void main() {
-//   final TextformfieldDatetimeRangePickerPlatform initialPlatform = TextformfieldDatetimeRangePickerPlatform.instance;
+    testWidgets('renders correctly in timeOnly mode',
+        (WidgetTester tester) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Scaffold(
+            body: TextFormFieldDateTimeRangePicker(
+              selectedOption: DateTimeOption.timeOnly,
+              onChanged: (DateTimeRange range) {},
+            ),
+          ),
+        ),
+      );
 
-//   test('$MethodChannelTextformfieldDatetimeRangePicker is the default instance', () {
-//     expect(initialPlatform, isInstanceOf<MethodChannelTextformfieldDatetimeRangePicker>());
-//   });
+      expect(find.text('Start Time'), findsOneWidget);
+      expect(find.text('End Time'), findsOneWidget);
+      expect(find.text('Start Date'), findsNothing);
+      expect(find.text('End Date'), findsNothing);
+    });
 
-//   test('getPlatformVersion', () async {
-//     TextformfieldDatetimeRangePicker textformfieldDatetimeRangePickerPlugin = TextformfieldDatetimeRangePicker();
-//     MockTextformfieldDatetimeRangePickerPlatform fakePlatform = MockTextformfieldDatetimeRangePickerPlatform();
-//     TextformfieldDatetimeRangePickerPlatform.instance = fakePlatform;
+    testWidgets('renders correctly in dateOnly mode',
+        (WidgetTester tester) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Scaffold(
+            body: TextFormFieldDateTimeRangePicker(
+              selectedOption: DateTimeOption.dateOnly,
+              onChanged: (DateTimeRange range) {},
+            ),
+          ),
+        ),
+      );
 
-//     expect(await textformfieldDatetimeRangePickerPlugin.getPlatformVersion(), '42');
-//   });
-// }
+      expect(find.text('Start Date'), findsOneWidget);
+      expect(find.text('End Date'), findsOneWidget);
+      expect(find.text('Starting Hour'), findsNothing);
+      expect(find.text('End Hour'), findsNothing);
+    });
+
+    testWidgets('calls onChanged when date is selected',
+        (WidgetTester tester) async {
+      DateTimeRange? selectedRange;
+
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Scaffold(
+            body: TextFormFieldDateTimeRangePicker(
+              selectedOption: DateTimeOption.fullDateTime,
+              onChanged: (DateTimeRange range) {
+                selectedRange = range;
+              },
+            ),
+          ),
+        ),
+      );
+
+      // Tap the start date field
+      await tester.tap(find.byType(DateTimeFields).first);
+      await tester.pumpAndSettle();
+
+      // Select a date from the date picker
+      await tester.tap(find.text('15'));
+      await tester.tap(find.text('OK'));
+      await tester.pumpAndSettle();
+
+      expect(selectedRange, isNotNull);
+    });
+  });
+}
