@@ -1,9 +1,9 @@
-name: Publish
+name: Publish to pub.dev
 
 on:
   push:
     tags:
-      - 'v*.*.*'
+      - "v[0-9]+.[0-9]+.[0-9]+*"
     branches:
       - master
   pull_request:
@@ -12,24 +12,19 @@ on:
 
 jobs:
   publish:
+    permissions:
+      id-token: write # Required for authentication using OIDC
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      # Set up Dart SDK (tanpa Flutter)
-      - name: Set up Dart SDK
-        uses: dart-lang/setup-dart@9a04e6d73cca37bd455e0608d7e5092f881fd603
-        with:
-          sdk: stable
-
+      - uses: actions/checkout@v3
       # Install Flutter SDK
       - name: Install Flutter SDK
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.16.9'
-          channel: 'stable'
+          flutter-version: "3.16.9"
+          channel: "stable"
+          environment: pub.dev
 
       # Install dependencies
       - name: Install dependencies
@@ -44,5 +39,5 @@ jobs:
         env:
           PUB_DEV_TOKEN: ${{ secrets.PUB_DEV_TOKEN }}
         run: |
-          echo $PUB_DEV_TOKEN | dart pub publish --force --server=https://pub.dev
+          echo $PUB_DEV_TOKEN | flutter pub publish -f
           bash scripts/credentials.sh
