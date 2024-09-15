@@ -19,22 +19,21 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       # Install Flutter SDK
-      - name: Install Flutter SDK
+      - name: Install Flutter SDK 🎯
         uses: subosito/flutter-action@v2
         with:
           flutter-version: "3.16.9"
           channel: "stable"
       # Install dependencies
-      - name: Install dependencies
+      - name: Install dependencies 📚
         run: flutter pub get
 
       # Validate pubspec.yaml
       - name: Validate pubspec.yaml
         run: flutter pub publish --dry-run
 
-      # Publikasi ke pub.dev
-      - name: Publish to pub.dev
-        env:
-          PUB_DEV_TOKEN: ${{ secrets.PUB_DEV_TOKEN }}
-        run: |
-          echo $PUB_DEV_TOKEN | flutter pub publish -f
+      - name: Publish to pub.dev 🚀
+        uses: k-paxian/dart-package-publisher@v1.5
+        with:
+          credentialJson: ${{ secrets.PUB_CREDENTIALS_JSON }}
+          flutter: true

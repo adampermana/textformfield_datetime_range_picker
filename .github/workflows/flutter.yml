@@ -13,13 +13,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Install Flutter SDK
+      - name: Checkout 🔔
+        uses: actions/checkout@v3
+
+      - name: Install Flutter SDK 🎯
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: "3.16.9"
-          channel: "stable"
-      - name: Install dependencies
+          flutter-version: '3.16.9'
+          channel: 'stable'
+
+      - name: Install dependencies 📚
         run: flutter pub get
+        
       - name: Analyze project source
         run: flutter analyze
