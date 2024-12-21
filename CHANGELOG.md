@@ -1,9 +1,14 @@
-## [0.0.2]
+## 0.0.3
 
-* Updating library docs
-* Adding example docs
+- Support macOS and Desktop
+- Update README
 
-## [0.0.1]
+## 0.0.2
 
-* Initial release of `textformfield_datetime_range_picker`
-* Get available textformfield_datetime_range_picker on iOS and Android
+- Updating library docs
+- Adding example docs
+
+## 0.0.1
+
+- Initial release of `textformfield_datetime_range_picker`
+- Get available textformfield_datetime_range_picker on iOS and Android
