@@ -1,5 +1,12 @@
 # textformfield_datetime_range_picker
 
+[![pub package](https://img.shields.io/pub/v/textformfield_datetime_range_picker)](https://pub.dartlang.org/packages/textformfield_datetime_range_picker)
+[![likes](https://img.shields.io/pub/likes/textformfield_datetime_range_picker)](https://pub.dev/packages/textformfield_datetime_range_picker/score)
+[![popularity](https://img.shields.io/pub/popularity/textformfield_datetime_range_picker)](https://pub.dev/packages/textformfield_datetime_range_picker/score)
+[![pub points](https://img.shields.io/pub/points/textformfield_datetime_range_picker)](https://pub.dev/packages/textformfield_datetime_range_picker/score)
+[![GitHub stars](https://img.shields.io/github/stars/adampermana/textformfield_datetime_range_picker?logo=github)](https://github.com/adampermana/textformfield_datetime_range_picker/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/adampermana/textformfield_datetime_range_picker?logo=github)](https://github.com/adampermana/textformfield_datetime_range_picker/network)
+
 A customizable date and time range picker widget for Flutter applications.
 
 The `TextFormFieldDateTimeRangePicker` allows users to select a range of dates and times. It supports three modes: full date-time, time-only, and date-only selection. This widget is useful for scenarios where you need users to specify a range of dates and/or times, such as booking systems, scheduling apps, or event management.
@@ -28,25 +35,31 @@ The `TextFormFieldDateTimeRangePicker` allows users to select a range of dates a
 * Flutter iOS
 * Flutter web
 * Flutter desktop
+* Flutter macos
 
 ## Installation
 
-Add `textformfield_datetime_range_picker.dart: ^0.0.1` to your `pubspec.yaml` dependencies. And import it:
+1. Add `textformfield_datetime_range_picker.dart: <latest-version>` to your `pubspec.yaml` dependencies. And import it:
+   Get the latest version in the 'Installing' tab on pub.dev
+```yaml
+dependencies:
+  textformfield_datetime_range_picker: <latest-version>
+```
+```yaml
+flutter pub add textformfield_datetime_range_picker
+```
 
+2. Run pub get.
+```yaml
+flutter pub get
+```
+3. Import package.
 ```dart
 import 'package:textformfield_datetime_range_picker/textformfield_datetime_range_picker.dart';
 ```
 
-Add the following line to your `pubspec.yaml` file:
 
-```yaml
-flutter pub add auto_size_text_field
-```
 
-```yaml
-dependencies:
-  textformfield_datetime_range_picker: ^1.0.0
-```
 
 ## Example
 ```dart
@@ -122,3 +135,7 @@ class _MyAppState extends State<MyApp> {
 ## License
 
 MIT
+
+## Contributing
+
+Pull requests are welcome.
