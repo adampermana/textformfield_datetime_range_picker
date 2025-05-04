@@ -1,33 +1,40 @@
-name: Publish to pub.dev
+name: Publish to pub dev
 
 on:
   push:
     tags:
       - "v[0-9]+.[0-9]+.[0-9]+*"
   release:
-    types: [published]
+    types: [published] 
 
 jobs:
   publish:
+    environment: production
     permissions:
       id-token: write
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      # Install Flutter SDK
-      - name: Install Flutter SDK 🎯
+
+      - name: 📚 Checkout
+        uses: actions/checkout@v3 
+
+      - name: Setup Flutter 🎯
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: "3.16.9"
           channel: "stable"
-          cache: true
-      # Install dependencies
-      - name: Install dependencies 📚
+          flutter-version: 3.22.x
+
+      - name: Install dependencies 📦
         run: flutter pub get
 
-      # Validate pubspec.yaml
-      - name: Validate pubspec.yaml
+      - name: 🕵️ Analyze
+        run: flutter analyze
+
+      - name: 🧪 Run Tests
+        run: flutter test
+
+      - name: ✅ Validate pubspec.yaml
         run: dart pub publish --dry-run
 
       - name: Publish to pub.dev 🚀
@@ -35,4 +42,4 @@ jobs:
         with:
           credentialJson: ${{ secrets.PUB_CREDENTIALS_JSON }}
           flutter: true
-          skipTests: true
+          skipTests: false
