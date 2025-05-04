@@ -1,6 +1,6 @@
-# textformfield_datetime_range_picker_example
+# example
 
-Demonstrates how to use the textformfield_datetime_range_picker plugin.
+A new Flutter project.
 
 ## Getting Started
 
