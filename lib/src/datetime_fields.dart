@@ -46,12 +46,12 @@ class DateTimeFields extends FormField<DateTime> {
     required this.onShowPicker,
 
     // From super
-    Key? key,
-    FormFieldSetter<DateTime>? onSaved,
-    FormFieldValidator<DateTime>? validator,
-    DateTime? initialValue,
-    AutovalidateMode? autovalidateMode,
-    bool enabled = true,
+    super.key,
+    super.onSaved,
+    super.validator,
+    super.initialValue,
+    super.autovalidateMode,
+    super.enabled,
 
     // Features
     this.resetIcon = const Icon(Icons.close),
@@ -88,64 +88,56 @@ class DateTimeFields extends FormField<DateTime> {
     EdgeInsets scrollPadding = const EdgeInsets.all(20.0),
     bool enableInteractiveSelection = true,
     InputCounterWidgetBuilder? buildCounter,
-  }) : super(
-            key: key,
-            autovalidateMode: autovalidateMode,
-            initialValue: initialValue,
-            enabled: enabled,
-            validator: validator,
-            onSaved: onSaved,
-            builder: (field) {
-              final _DateTimeFieldState state = field as _DateTimeFieldState;
-              final InputDecoration effectiveDecoration = (decoration ??
-                      const InputDecoration())
+  }) : super(builder: (field) {
+          final _DateTimeFieldState state = field as _DateTimeFieldState;
+          final InputDecoration effectiveDecoration =
+              (decoration ?? const InputDecoration())
                   .applyDefaults(Theme.of(field.context).inputDecorationTheme);
-              return TextField(
-                controller: state._effectiveController,
-                focusNode: state._effectiveFocusNode,
-                decoration: effectiveDecoration.copyWith(
-                  errorText: field.errorText,
-                  suffixIcon: state.shouldShowClearIcon(effectiveDecoration)
-                      ? IconButton(
-                          icon: resetIcon!,
-                          onPressed: state.clear,
-                        )
-                      : null,
-                ),
-                keyboardType: keyboardType,
-                textInputAction: textInputAction,
-                style: style,
-                strutStyle: strutStyle,
-                textAlign: textAlign,
-                textDirection: textDirection,
-                textCapitalization: textCapitalization,
-                autofocus: autofocus,
-                readOnly: readOnly,
-                showCursor: showCursor,
-                obscureText: obscureText,
-                autocorrect: autocorrect,
-                maxLengthEnforcement: maxLengthEnforcement,
-                maxLines: maxLines,
-                minLines: minLines,
-                expands: expands,
-                maxLength: maxLength,
-                onChanged: (string) =>
-                    field.didChange(tryParse(string, format)),
-                onEditingComplete: onEditingComplete,
-                onSubmitted: (string) => onFieldSubmitted == null
-                    ? null
-                    : onFieldSubmitted(tryParse(string, format)),
-                inputFormatters: inputFormatters,
-                enabled: enabled,
-                cursorWidth: cursorWidth,
-                cursorRadius: cursorRadius,
-                cursorColor: cursorColor,
-                scrollPadding: scrollPadding,
-                keyboardAppearance: keyboardAppearance,
-                enableInteractiveSelection: enableInteractiveSelection,
-                buildCounter: buildCounter,
-              );
-            });
+          return TextField(
+            controller: state._effectiveController,
+            focusNode: state._effectiveFocusNode,
+            decoration: effectiveDecoration.copyWith(
+              errorText: field.errorText,
+              suffixIcon: state.shouldShowClearIcon(effectiveDecoration)
+                  ? IconButton(
+                      icon: resetIcon!,
+                      onPressed: state.clear,
+                    )
+                  : null,
+            ),
+            keyboardType: keyboardType,
+            textInputAction: textInputAction,
+            style: style,
+            strutStyle: strutStyle,
+            textAlign: textAlign,
+            textDirection: textDirection,
+            textCapitalization: textCapitalization,
+            autofocus: autofocus,
+            readOnly: readOnly,
+            showCursor: showCursor,
+            obscureText: obscureText,
+            autocorrect: autocorrect,
+            maxLengthEnforcement: maxLengthEnforcement,
+            maxLines: maxLines,
+            minLines: minLines,
+            expands: expands,
+            maxLength: maxLength,
+            onChanged: (string) => field.didChange(tryParse(string, format)),
+            onEditingComplete: onEditingComplete,
+            onSubmitted: (string) => onFieldSubmitted == null
+                ? null
+                : onFieldSubmitted(tryParse(string, format)),
+            inputFormatters: inputFormatters,
+            enabled: enabled,
+            cursorWidth: cursorWidth,
+            cursorRadius: cursorRadius,
+            cursorColor: cursorColor,
+            scrollPadding: scrollPadding,
+            keyboardAppearance: keyboardAppearance,
+            enableInteractiveSelection: enableInteractiveSelection,
+            buildCounter: buildCounter,
+          );
+        });
 
   /// For representing the date as a string e.g.
   /// `DateFormat("EEEE, MMMM d, yyyy 'at' h:mma")`

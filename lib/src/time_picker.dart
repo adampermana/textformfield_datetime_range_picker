@@ -54,7 +54,7 @@ class CustomTimePicker extends StatefulWidget {
   final TimePickerCallback? onTimeChange;
 
   const CustomTimePicker({
-    Key? key,
+    super.key,
     this.time,
     this.minutesInterval = 1,
     this.secondsInterval = 1,
@@ -69,7 +69,7 @@ class CustomTimePicker extends StatefulWidget {
     this.isForce2Digits = false,
     // this.isWeb = false,
     this.onTimeChange,
-  }) : super(key: key);
+  });
 
   @override
   State<CustomTimePicker> createState() => _CustomTimePickerState();
@@ -559,6 +559,7 @@ class _CustomTimePickerState extends State<CustomTimePicker> {
 }
 
 /// Custom ScrollPhysics that snaps to item positions
+/// Custom ScrollPhysics that snaps to item positions
 class ItemScrollPhysics extends ScrollPhysics {
   /// Height of each item to snap to
   final double itemHeight;
@@ -567,10 +568,10 @@ class ItemScrollPhysics extends ScrollPhysics {
   final double targetPixelsLimit;
 
   const ItemScrollPhysics({
-    ScrollPhysics? parent,
+    super.parent,
     required this.itemHeight,
     this.targetPixelsLimit = 3.0,
-  }) : super(parent: parent);
+  });
 
   @override
   ItemScrollPhysics applyTo(ScrollPhysics? ancestor) {
@@ -611,6 +612,8 @@ class ItemScrollPhysics extends ScrollPhysics {
   Simulation? createBallisticSimulation(
       ScrollMetrics position, double velocity) {
     // Create spring simulation to snap to nearest item
+    // Replace deprecated 'tolerance' with 'toleranceFor'
+    final Tolerance tolerance = toleranceFor(position);
     final double target =
         _getTargetPixels(position as ScrollPosition, tolerance, velocity);
 
@@ -620,7 +623,7 @@ class ItemScrollPhysics extends ScrollPhysics {
         position.pixels,
         target,
         velocity,
-        tolerance: tolerance,
+        tolerance: tolerance, // Use the tolerance from toleranceFor
       );
     }
 

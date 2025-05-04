@@ -8,6 +8,8 @@
  2024-08-03 - Initial creation of the TextFormFieldDateTimeRangePicker widget.
  2024-08-03 - Added support for different date-time selection modes: fullDateTime, timeOnly, dateOnly.
  2024-08-03 - Integrated CustomTimePicker for enhanced time selection experience.
+ 2025-05-05 - Converted from plugin to pure Dart package for improved maintainability.
+ 2025-05-05 - Updated to support iOS 18 SDK compatibility requirements.
 
  Summary           :
  This file contains a customizable Flutter widget for picking a range of dates and/or times.
@@ -64,37 +66,6 @@ class TextFormFieldDateTimeRangePicker extends StatefulWidget {
   /// It supports three modes: full date-time, time-only, and date-only selection. This widget is useful
   /// for scenarios where you need users to specify a range of dates and/or times, such as booking systems,
   /// scheduling apps, or event management.
-  ///
-  /// Example usage:
-  /// ```dart
-  /// TextFormFieldDateTimeRangePicker(
-  ///               selectedOption: DateTimeOption.fullDateTime,
-  ///               initialDate: dateTtime,
-  ///               hintTextDate: 'Select Date',
-  ///               hintTextTime: 'Select Time',
-  ///               onChanged: (date) {
-  ///                 setState(() {
-  ///                   dateTtime = date.start;
-  ///                   dateTtime = date.end;
-  ///                 });
-  ///               },
-  ///             ),
-  ///
-  /// example usage Bloc:
-  /// TextFormFieldDateTimeRangePicker(
-  ///   selectedOption: DateTimeOption.fullDateTime
-  ///   initialDate: state.dateTime ?? DateTime.now(),
-  ///   hintTextDate: 'Select Date',
-  ///   onChanged: (date) {
-  ///     context.read<SecurityFormBloc>().add(
-  ///           SecurityFormEvent.dateTimeChanged(
-  ///             dateTime: date.start,
-  ///             endTime: date.end,
-  ///           ),
-  ///         );
-  ///   },
-  /// ),
-  /// ```
   const TextFormFieldDateTimeRangePicker({
     super.key,
     required this.selectedOption,
