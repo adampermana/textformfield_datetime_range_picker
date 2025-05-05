@@ -1,4 +1,4 @@
-## 0.1.0 - 05/05/2025
+## 0.1.1 - 05/05/2025
 Fix: Replace deprecated withOpacity() with withAlpha() to avoid precision loss
 
 ## 0.1.0 - 05/05/2025
