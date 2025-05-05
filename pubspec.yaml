@@ -1,6 +1,6 @@
 name: textformfield_datetime_range_picker
 description: A customizable date and time range picker widget for Flutter applications.
-version: 0.1.0
+version: 0.1.1
 homepage: https://github.com/adampermana/textformfield_datetime_range_picker.git
 repository: https://github.com/adampermana/textformfield_datetime_range_picker.git
 issue_tracker: https://github.com/adampermana/textformfield_datetime_range_picker/issues
