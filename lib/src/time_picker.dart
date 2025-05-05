@@ -483,7 +483,7 @@ class _CustomTimePickerState extends State<CustomTimePicker> {
         if (isScrolling)
           Positioned.fill(
             child: Container(
-              color: Colors.black.withOpacity(0),
+              color: Colors.black.withAlpha(0),
             ),
           ),
       ],
