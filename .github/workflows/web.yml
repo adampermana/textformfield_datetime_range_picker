@@ -25,7 +25,7 @@ jobs:
       - name: Build Web 🔧
         run: |
           cd example
-          flutter build web --release --base-href /flutter_custom_caraousel_v2/
+          flutter build web --release --base-href /textformfield_datetime_range_picker/
           
       - name: Deploy to GitHub Pages 🌐
         uses: peaceiris/actions-gh-pages@v3
